@@ -1,4 +1,5 @@
 set nu
+set relativenumber
 set mouse=a
 set fileencodings=utf-8,gb2312,usc-bom,cp936,euc-cn
 set termencoding=utf-8
@@ -36,6 +37,13 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 
 Plugin 'vim-scripts/taglist.vim'
+let Tlist_Show_One_File=1     "不同时显示多个文件的tag，只显示当前文件的    
+let Tlist_Exit_OnlyWindow=1   "如果taglist窗口是最后一个窗口，则退出vim   
+let Tlist_Ctags_Cmd="/usr/bin/ctags" "将taglist与ctags关联
+let Tlist_Use_Right_Window=1
+
+
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
