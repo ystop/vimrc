@@ -7,13 +7,15 @@ set termencoding=utf-8
 set encoding=utf-8
 set hlsearch " Highlight the search result
 set incsearch " Real-time search
-hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darked  guifg=white
-set ts=4
 set tabstop=4 
 set cursorline
 set cursorcolumn
-hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white  
+set ts=4 
+"一定要写tab才会是空格
+set expandtab
+" hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white  
 "hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white  
+highlight CursorColumn cterm=NONE ctermbg=None ctermfg=white  guibg=NONE guifg=NONE
 "默认缩进4个空格大小 
 set shiftwidth=4
 let mapleader = "\<Space>"
@@ -30,10 +32,10 @@ set autochdir
 autocmd vimenter * NERDTree
 map <C-e> :NERDTreeToggle<CR>
 Plugin 'vim-airline/vim-airline'
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"autocmd bufenter * if (winnr("$") == 1 && exiss("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 wincmd w
 autocmd VimEnter * wincmd w
-let NERDTreeWinSize=30
+let NERDTreeWinSize=25
 nnoremap <Leader>e <C-w>w
 nmap  w=  :resize +3<CR>
 nmap  w-  :resize -3<CR>
@@ -132,14 +134,33 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-"折叠
+"折叠 && 颜色
 set foldenable
 set foldmethod=indent
+set foldcolumn=0 
+setlocal foldlevel=1 
+"set foldlevelstart=99  "设置默认不折叠 
+hi Folded guibg=black guifg=grey40 ctermfg=grey ctermbg=darkgrey
+hi FoldColumn guibg=black guifg=grey20 ctermfg=4 ctermbg=7
 
 "语法检查
-#execute pathogen#infect()
+"execute pathogen#infect()
 Plugin 'git@github.com:vim-syntastic/syntastic.git'
 
 
+let g:syntastic_php_checkers = ['phpcs']
+let g:syntastic_php_phpcs_args = "--standard=zend -n --report=csv"
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+
+
 "不生效？
-""set guifont=Source_Code_Pro:h20
+"set guifont=Source_Code_Pro:h20
+
