@@ -1,7 +1,8 @@
 syntax on
 set nu
 set relativenumber
-set mouse=a
+"想直接复制粘贴就不能开这个
+""set mouse=a
 set fileencodings=utf-8,gb2312,usc-bom,cp936,euc-cn
 set termencoding=utf-8
 set encoding=utf-8
@@ -32,7 +33,7 @@ set autochdir
 autocmd vimenter * NERDTree
 map <C-e> :NERDTreeToggle<CR>
 Plugin 'vim-airline/vim-airline'
-"autocmd bufenter * if (winnr("$") == 1 && exiss("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+""autocmd bufenter * if (winnr("$") == 1 && exiss("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 wincmd w
 autocmd VimEnter * wincmd w
 let NERDTreeWinSize=25
