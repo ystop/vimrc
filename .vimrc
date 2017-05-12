@@ -128,6 +128,8 @@ endfunc
 inoremap <TAB> <c-r>=SkipPair()<CR>
 "设置自动缩进
 set ai! 
+"list选项，来显示非可见字符
+set list
 
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -147,19 +149,16 @@ hi FoldColumn guibg=black guifg=grey20 ctermfg=4 ctermbg=7
 "execute pathogen#infect()
 Plugin 'git@github.com:vim-syntastic/syntastic.git'
 
-
 let g:syntastic_php_checkers = ['phpcs']
-let g:syntastic_php_phpcs_args = "--standard=zend -n --report=csv"
+let g:syntastic_php_phpcs_args = "--standard=PSR2"
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-
 
 "不生效？
 "set guifont=Source_Code_Pro:h20
