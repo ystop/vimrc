@@ -59,7 +59,6 @@ autocmd FileType java,c,cpp,php set commentstring=//\ %s
 Plugin 'tpope/vim-fugitive'
 
 Plugin 'vim-scripts/taglist.vim'
-nnoremap <C-w> :Tlist<CR> 
 "自动更新ctag
 let Tlist_Auto_Update = 1
 let Tlist_Auto_Open=1 
@@ -74,7 +73,9 @@ let Tlist_Exit_OnlyWindow=1
 let Tlist_Process_File_Always=1 
 let Tlist_Inc_Winwidth=0
 " set tags=~/code/safehuntingnet.bak/tags
-set tags+=./../tags,./../../tags,./../../../tags
+set tags+=./../tags,./../../tags,./../../../tags,./../../../../tags,./../../../../../tags
+
+
 
 
 call vundle#end()            " required
@@ -152,7 +153,7 @@ inoremap <TAB> <c-r>=SkipPair()<CR>
 "设置自动缩进
 set ai! 
 "list选项，来显示非可见字符
-set list
+" set list
 
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -179,7 +180,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 let g:syntastic_loc_list_height = 3
@@ -190,10 +191,10 @@ Bundle 'Yggdroot/indentLine'
 let g:indentLine_char = '¦' 
 let g:indentLine_color_term = 245
 "映射到ctrl+i键 
-map <C-i> :IndentLinesToggle<CR> 
+"map <C-i> :IndentLinesToggle<CR> 
 
 "搜索
-Plugin 'git@github.com:kien/ctrlp.vim.git'
+" Plugin 'git@github.com:kien/ctrlp.vim.git'
 
 "代码补全
 " Track the engine.
@@ -207,5 +208,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+set noswapfile
 
 
