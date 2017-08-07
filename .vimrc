@@ -16,9 +16,10 @@ set cursorcolumn
 set ts=4 
 "一定要写tab才会是空格
 set expandtab
-hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white  
-hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white  
-" highlight CursorColumn cterm=NONE ctermbg=None ctermfg=white  guibg=NONE guifg=NONE
+hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+"highlight CursorColumn cterm=NONE ctermbg=None ctermfg=white  guibg=NONE guifg=NONE
+ " highlight CursorColumn cterm=NONE ctermbg=None ctermfg=white  guibg=NONE guifg=NONE
 "默认缩进4个空格大小 
 set shiftwidth=4
 let mapleader = "\<Space>"
@@ -75,8 +76,8 @@ let Tlist_Inc_Winwidth=0
 " set tags=~/code/safehuntingnet.bak/tags
 set tags+=./../tags,./../../tags,./../../../tags,./../../../../tags,./../../../../../tags
 
-
-
+" go
+Plugin 'fatih/vim-go'
 
 call vundle#end()            " required
 filetype plugin indent on    " required	
@@ -93,9 +94,9 @@ Plugin 'vim-scripts/DoxygenToolkit.vim'
 let g:DoxygenToolkit_commentType = "PHP"
 let g:DoxygenToolkit_authorName="yangshuai-s@360.cn" 
 
-"set background=dark
-"olorscheme solarized
-colorscheme Tomorrow-Night
+set background=dark
+colorscheme solarized
+" colorscheme Tomorrow-Night
 "colorscheme desert
 
 "括号亮
@@ -210,5 +211,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
 set noswapfile
+
+" Plugin 'Valloric/YouCompleteMe'
+
+
 
 
