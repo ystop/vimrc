@@ -16,13 +16,9 @@ set cursorcolumn
 set ts=4 
 "一定要写tab才会是空格
 set expandtab
-hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-"highlight CursorColumn cterm=NONE ctermbg=None ctermfg=white  guibg=NONE guifg=NONE
- " highlight CursorColumn cterm=NONE ctermbg=None ctermfg=white  guibg=NONE guifg=NONE
 "默认缩进4个空格大小 
 set shiftwidth=4
-let mapleader = "\<Space>"
+let mapleader = ";"
 "nnoremap <Leader>w :w<CR>
 "nnoremap <Leader>q :q!<CR>
 
@@ -41,6 +37,7 @@ map <C-e> :NERDTreeToggle<CR>
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -94,11 +91,10 @@ Plugin 'vim-scripts/DoxygenToolkit.vim'
 let g:DoxygenToolkit_commentType = "PHP"
 let g:DoxygenToolkit_authorName="yangshuai-s@360.cn" 
 
-set background=dark
-colorscheme solarized
+" set background=dark
+" colorscheme solarized
 " colorscheme Tomorrow-Night
-"colorscheme desert
-
+"colorscheme desert 
 "括号亮
 Plugin 'git@github.com:luochen1990/rainbow.git'
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
@@ -213,7 +209,44 @@ let g:UltiSnipsEditSplit="vertical"
 set noswapfile
 
 " Plugin 'Valloric/YouCompleteMe'
+" Plugin 'git@github.com:fholgado/minibufexpl.vim.git'
 
 
 
+
+
+" hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=darkred guibg=darkred guifg=white
+" hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=darkred guibg=darkred guifg=white
+highlight CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=NONE guifg=NONE
+highlight CursorColumn cterm=NONE ctermbg=lightgrey ctermfg=black guibg=NONE guifg=NONE
+
+set hidden " 避免必须保存修改才可以跳转buffer
+" buffer快速导航
+nnoremap <Leader>b :bp<CR>
+nnoremap <Leader>f :bn<CR>
+nnoremap <Leader>d :bd<CR>
+" 查看buffers
+nnoremap <Leader>l :ls<CR>
+" 通过索引快速跳转
+nnoremap <Leader>1 :1b<CR>
+nnoremap <Leader>2 :2b<CR>
+nnoremap <Leader>3 :3b<CR>
+nnoremap <Leader>4 :b 4<CR>
+nnoremap <Leader>5 :5b<CR>
+nnoremap <Leader>q :6b<CR>
+nnoremap <Leader>w :7b<CR>
+nnoremap <Leader>e :8b<CR>
+nnoremap <Leader>r :9b<CR>
+nnoremap <Leader>t :10b<CR>
+
+nnoremap <Leader>d1 :bd1<CR>
+nnoremap <Leader>d2 :bd2<CR>
+nnoremap <Leader>d3 :bd3<CR>
+nnoremap <Leader>d4 :bd4<CR>
+nnoremap <Leader>d5 :bd4<CR>
+nnoremap <Leader>dq :bd5<CR>
+nnoremap <Leader>dw :bd6<CR>
+nnoremap <Leader>de :bd6<CR>
+nnoremap <Leader>dr :bd7<CR>
+nnoremap <Leader>dt :bd8<CR>
 
