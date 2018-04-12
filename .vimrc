@@ -1,8 +1,9 @@
 syntax on
 set nu
+set list
 "不备份了
 set nobackup
-set relativenumber
+"set relativenumber
 "想直接复制粘贴就不能开这个
 ""set mouse=a
 set fileencodings=utf-8,gb2312,usc-bom,cp936,euc-cn
@@ -74,7 +75,7 @@ let Tlist_Inc_Winwidth=0
 set tags+=./../tags,./../../tags,./../../../tags,./../../../../tags,./../../../../../tags
 
 " go
-Plugin 'fatih/vim-go'
+" Plugin 'fatih/vim-go'
 
 call vundle#end()            " required
 filetype plugin indent on    " required	
@@ -91,10 +92,10 @@ Plugin 'vim-scripts/DoxygenToolkit.vim'
 let g:DoxygenToolkit_commentType = "PHP"
 let g:DoxygenToolkit_authorName="yangshuai-s@360.cn" 
 
-" set background=dark
-" colorscheme solarized
-" colorscheme Tomorrow-Night
-"colorscheme desert 
+""set background=dark
+""colorscheme solarized
+""colorscheme Tomorrow-Night
+""colorscheme desert 
 "括号亮
 Plugin 'git@github.com:luochen1990/rainbow.git'
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
@@ -137,16 +138,6 @@ inoremap " ""<ESC>i
 inoremap ( ()<ESC>i
 inoremap [ []<ESC>i
 inoremap { {<CR>}<ESC>O
-"设置跳出自动补全的括号
-func SkipPair()  
-    if getline('.')[col('.') - 1] == ')' || getline('.')[col('.') - 1] == ']' || getline('.')[col('.') - 1] == '"' || getline('.')[col('.') - 1] == "'" || getline('.')[col('.') - 1] == '}'  
-        return "\<ESC>la"  
-    else  
-        return "\t"  
-    endif  
-endfunc  
-" 将tab键绑定为跳出括号  
-inoremap <TAB> <c-r>=SkipPair()<CR>
 "设置自动缩进
 set ai! 
 "list选项，来显示非可见字符
@@ -170,6 +161,7 @@ hi FoldColumn guibg=black guifg=grey20 ctermfg=4 ctermbg=7
 "execute pathogen#infect()
 Plugin 'git@github.com:vim-syntastic/syntastic.git'
 
+"let g:syntastic_php_checkers = ['phpcs']
 let g:syntastic_php_checkers = ['php']
 let g:syntastic_php_phpcs_args = "--standard=PSR2"
 set statusline+=%#warningmsg#
@@ -191,7 +183,7 @@ let g:indentLine_color_term = 245
 "map <C-i> :IndentLinesToggle<CR> 
 
 "搜索
-" Plugin 'git@github.com:kien/ctrlp.vim.git'
+Plugin 'git@github.com:kien/ctrlp.vim.git'
 
 "代码补全
 " Track the engine.
@@ -215,10 +207,15 @@ set noswapfile
 
 
 
-" hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=darkred guibg=darkred guifg=white
-" hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=darkred guibg=darkred guifg=white
+"" hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=darkred guibg=darkred guifg=white
+"" hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=darkred guibg=darkred guifg=white
 highlight CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=NONE guifg=NONE
 highlight CursorColumn cterm=NONE ctermbg=lightgrey ctermfg=black guibg=NONE guifg=NONE
+""highlight CursorLine   cterm=NONE ctermbg=lightgrey ctermfg=  guibg=NONE guifg=NONE
+""highlight CursorColumn cterm=NONE ctermbg=lightgrey ctermfg=black guibg=NONE guifg=NONE
+""hi CursorColumn         ctermfg=White           ctermbg=Grey          
+""hi CursorLine           ctermfg=black      ctermbg=Grey
+
 
 set hidden " 避免必须保存修改才可以跳转buffer
 " buffer快速导航
@@ -249,4 +246,20 @@ nnoremap <Leader>dw :bd6<CR>
 nnoremap <Leader>de :bd6<CR>
 nnoremap <Leader>dr :bd7<CR>
 nnoremap <Leader>dt :bd8<CR>
+
+nnoremap <Leader>ps :set paste<CR>
+nnoremap <Leader>nps :set paste<CR>
+
+
+hi comment ctermfg=6 
+
+vnoremap <silent> <C-T> :<C-u>Ydv<CR>
+nnoremap <silent> <C-T> :<C-u>Ydc<CR>
+noremap <leader>yd :<C-u>Yde<CR>
+
+"Plugin 'git@github.com:tpope/vim-surround.git'
+Plugin 'git@github.com:jiangmiao/auto-pairs.git'
+
+
+
 
