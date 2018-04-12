@@ -97,7 +97,7 @@ let g:DoxygenToolkit_authorName="yangshuai-s@360.cn"
 ""colorscheme Tomorrow-Night
 ""colorscheme desert 
 "括号亮
-Plugin 'git@github.com:luochen1990/rainbow.git'
+Plugin 'https://github.com/luochen1990/rainbow.git'
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 let g:rainbow_conf = {
 \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
@@ -159,7 +159,7 @@ hi FoldColumn guibg=black guifg=grey20 ctermfg=4 ctermbg=7
 
 "语法检查
 "execute pathogen#infect()
-Plugin 'git@github.com:vim-syntastic/syntastic.git'
+Plugin 'https://github.com/vim-syntastic/syntastic.git'
 
 "let g:syntastic_php_checkers = ['phpcs']
 let g:syntastic_php_checkers = ['php']
@@ -183,7 +183,7 @@ let g:indentLine_color_term = 245
 "map <C-i> :IndentLinesToggle<CR> 
 
 "搜索
-Plugin 'git@github.com:kien/ctrlp.vim.git'
+Plugin 'https://github.com/kien/ctrlp.vim.git'
 
 "代码补全
 " Track the engine.
@@ -258,7 +258,7 @@ nnoremap <silent> <C-T> :<C-u>Ydc<CR>
 noremap <leader>yd :<C-u>Yde<CR>
 
 "Plugin 'git@github.com:tpope/vim-surround.git'
-Plugin 'git@github.com:jiangmiao/auto-pairs.git'
+Plugin 'https://github.com/jiangmiao/auto-pairs.git'
 
 
 
