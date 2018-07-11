@@ -260,6 +260,8 @@ noremap <leader>yd :<C-u>Yde<CR>
 "Plugin 'git@github.com:tpope/vim-surround.git'
 Plugin 'https://github.com/jiangmiao/auto-pairs.git'
 
+Plugin 'https://github.com/easymotion/vim-easymotion.git'
+
 
 
 
