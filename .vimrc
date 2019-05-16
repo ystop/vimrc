@@ -19,7 +19,7 @@ set ts=4
 set expandtab
 "默认缩进4个空格大小 
 set shiftwidth=4
-let mapleader = ";"
+let mapleader = ","
 "nnoremap <Leader>w :w<CR>
 "nnoremap <Leader>q :q!<CR>
 
