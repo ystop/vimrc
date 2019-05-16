@@ -90,7 +90,7 @@ let Tlist_Use_Right_Window=1            "在右侧窗口中显示taglist窗口
 Plugin 'vim-scripts/DoxygenToolkit.vim'
 
 let g:DoxygenToolkit_commentType = "PHP"
-let g:DoxygenToolkit_authorName="yangshuai-s@360.cn" 
+let g:DoxygenToolkit_authorName="ys" 
 
 ""set background=dark
 ""colorscheme solarized
