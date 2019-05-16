@@ -248,7 +248,7 @@ nnoremap <Leader>dr :bd7<CR>
 nnoremap <Leader>dt :bd8<CR>
 
 nnoremap <Leader>ps :set paste<CR>
-nnoremap <Leader>nps :set paste<CR>
+nnoremap <Leader>nps :set nopaste<CR>
 
 
 hi comment ctermfg=6 
